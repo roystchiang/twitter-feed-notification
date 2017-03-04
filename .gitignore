@@ -87,3 +87,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Vim stuff:
+*.swp
+
+# Specific files:
+settings.py
