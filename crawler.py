@@ -3,6 +3,7 @@ import json
 import multiprocessing
 import settings
 import tweepy
+import time
 
 auth = tweepy.OAuthHandler(settings.twitter_consumer_key,
                            settings.twitter_consumer_secret)
@@ -112,7 +113,8 @@ class CrawlQueueWorker(multiprocessing.Process):
 
     def _crawl_twitter(self, user):
         try:
-            for status in tweepy.Cursor(api.search, q="@"+user).items(100):
+            for status in tweepy.Cursor(api.search,
+                                        q="@"+user+" since:2017-03-02" + " until:2017-03-04").items():
                 self.tweet_queue.put(status)
         except tweepy.TweepError as e:
             print "{}: {}, {}".format(self.name, user, e)
@@ -121,14 +123,14 @@ class CrawlQueueWorker(multiprocessing.Process):
 
 if __name__ == "__main__":
     # initialize common variables
-    crawl_queue_worker_count = 4
+    crawl_queue_worker_count = 1
 
     # initalize queues
     crawl_queue = multiprocessing.JoinableQueue()
     tweet_queue = multiprocessing.JoinableQueue()
 
     # add all requred feeds into the queue
-    for twitter_user in settings.feeds[0:2]:
+    for twitter_user in settings.feeds:
         crawl_queue.put(twitter_user)
     for i in range(crawl_queue_worker_count):
         crawl_queue.put(None)

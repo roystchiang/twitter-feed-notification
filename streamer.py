@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 import multiprocessing
 import settings
 import tweepy
@@ -33,10 +34,19 @@ class OfflineTweets(object):
         self.tweets = []
         self.initialize_tweets()
 
+    def _isotime_parser(self, time):
+        """
+        Args:
+            time - A string
+        Returns a datetime object
+        """
+        return datetime.strptime(time, "%Y-%m-%dT%H:%M:%S")
+
     def initialize_tweets(self):
         with open(self.file_name) as f:
             for line in f:
                 data = json.loads(line)
+                data['created_at'] = self._isotime_parser(data['created_at'])
                 self.tweets.append(data)
         self.tweets = sorted(self.tweets, key=lambda tweet: tweet['created_at'])
 
