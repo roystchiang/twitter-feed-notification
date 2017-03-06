@@ -44,3 +44,19 @@ tweets, twe notify the user.
 
 A better approach would be to look at the time and day, since there would
 probably be less tweets at night and on the weekends as well.
+
+## Setup
+
+Please create a file ``setup.py`` containing the following information
+
+```
+twitter_consumer_key = ""
+twitter_consumer_secret = ""
+twitter_access_token = "-pSQ6R6ZolM3XfRofCMmgIyLy0XPY5UStjC5SMAY2Hy"
+twitter_access_secret = ""
+feeds = ['nytimes', 'thesunnewspaper', 'thetimes', 'ap', 'cnn', 'bbcnews',
+         'cnet', 'msnuk', 'telegraph', 'usatoday', 'wsj', 'washingtonpost',
+         'bostonglobe', 'newscomauhq', 'skynews', 'sfgate', 'ajenglish',
+         'independent', 'guardian', 'latimes', 'reutersagency', 'abc',
+         'bloombernews', 'bw', 'time']
+```
