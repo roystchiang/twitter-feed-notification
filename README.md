@@ -1,7 +1,7 @@
 # twitter-feed-notification
 
-The project's purpose is to determine if a twitter event should be reported to the user.
-This project has three separate sections:
+This project's purpose is to determine if a twitter event should be reported to the user.
+The project has three separate sections:
 
 * crawler.py
 * streamer.py
@@ -14,10 +14,10 @@ using ``@user_handle``.
 
 ## streamer.py
 
-Stream contains two main classes. ``OfflineStreamer`` and ``Streamer``.
-``Streamer`` is suppose to stream from the twitter API into another service that handles all
-the incoming tweets, and ``OfflineStreamer`` is suppose to mock ``Streamer``
-but using data from ``tweets.json``
+Stream contains two main classes:
+
+* ``Streamer`` - this class streams the twitter API and diverts incoming tweets to another service
+* ``OfflineStreamer`` - This class is a psuedo ``Streamer`` class that uses data from ``tweets.json``
 
 ## machine_learning.py
 
