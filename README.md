@@ -17,11 +17,11 @@ using ``@user_handle``.
 Stream contains two main classes:
 
 * ``Streamer`` - this class streams the twitter API and diverts incoming tweets to another service
-* ``OfflineStreamer`` - This class is a psuedo ``Streamer`` class that uses data from ``tweets.json``
+* ``OfflineStreamer`` - this class is a psuedo ``Streamer`` class that uses data from ``tweets.json``
 
 ## machine_learning.py
 
-This file is the meat of the project. All tweets are first preprocessed, then
+This file is central to the project. All tweets are preprocessed,
 clustered by topics, and a notifier decides whether to send notification or
 not.
 
