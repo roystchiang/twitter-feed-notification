@@ -1,11 +1,11 @@
 # twitter-feed-notification
 
-The goal of this project is to detect whether there is an event on twitter that
-is worth reporting to the user. The project is separated into three sections.
+The project's purpose is to determine if a twitter event should be reported to the user.
+This project has three separate sections:
 
-1. crawler.py
-2. streamer.py
-3. machine_learning.py
+* crawler.py
+* streamer.py
+* machine_learning.py
 
 ## crawler.py
 
