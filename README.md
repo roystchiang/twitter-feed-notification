@@ -32,7 +32,7 @@ removed.
 
 ### Clustering
 
-Two clustering methods are implemented: [NMF](https://en.wikipedia.org/wiki/Non-negative_matrix_factorization) (Non-negative matrix Factorization) ,and [KMeans](https://en.wikipedia.org/wiki/K-means_clusterings).
+Two clustering methods are implemented: [NMF](https://en.wikipedia.org/wiki/Non-negative_matrix_factorization) (Non-negative matrix Factorization) ,and [KMeans](https://en.wikipedia.org/wiki/K-means_clustering).
 Major benefit of KMeans is bagging is used until all "best tweets" from the largest
 cluster converge into a single "tweet."
 
