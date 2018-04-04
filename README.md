@@ -38,12 +38,12 @@ cluster converge into a single "tweet."
 
 ### Notifier
 
-Right now, it's an extremely simply class that just looks at the average amount
-of tweet, and if there are 3 times more tweets than the average amount of
-tweets, twe notify the user.
+The notifier is a simply class that averages the amount of tweet.
+If there are 3 times more tweets than the average tweet amount,
+notify the user.
 
-A better approach would be to look at the time and day, since there would
-probably be less tweets at night and on the weekends as well.
+An improved notifier class would check the time and day. My assumption is there are
+less tweets at night and on weekends.
 
 ## Setup
 
